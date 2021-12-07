@@ -1,0 +1,40 @@
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/bin/Debug/Многоугольники.exe.config
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/bin/Debug/Многоугольники.exe
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/bin/Debug/Многоугольники.pdb
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.csproj.AssemblyReference.cache
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.Form1.resources
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.Properties.Resources.resources
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.csproj.GenerateResource.cache
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.csproj.CoreCompileInputs.cache
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.exe
+D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/Debug/Многоугольники.pdb
+/run/media/artem/MISO_EFI/Многоугольники/bin/Debug/Многоугольники.exe.config
+/run/media/artem/MISO_EFI/Многоугольники/bin/Debug/Многоугольники.exe
+/run/media/artem/MISO_EFI/Многоугольники/bin/Debug/Многоугольники.pdb
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.csproj.AssemblyReference.cache
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.Form1.resources
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.Properties.Resources.resources
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.csproj.GenerateResource.cache
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.csproj.CoreCompileInputs.cache
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.exe
+/run/media/artem/MISO_EFI/Многоугольники/obj/Debug/Многоугольники.pdb
+/home/artem/Многоугольники/bin/Debug/Многоугольники.exe.config
+/home/artem/Многоугольники/bin/Debug/Многоугольники.exe
+/home/artem/Многоугольники/bin/Debug/Многоугольники.pdb
+/home/artem/Многоугольники/obj/Debug/Многоугольники.csproj.AssemblyReference.cache
+/home/artem/Многоугольники/obj/Debug/Многоугольники.Form1.resources
+/home/artem/Многоугольники/obj/Debug/Многоугольники.Properties.Resources.resources
+/home/artem/Многоугольники/obj/Debug/Многоугольники.csproj.GenerateResource.cache
+/home/artem/Многоугольники/obj/Debug/Многоугольники.csproj.CoreCompileInputs.cache
+/home/artem/Многоугольники/obj/Debug/Многоугольники.exe
+/home/artem/Многоугольники/obj/Debug/Многоугольники.pdb
+/home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Многоугольники.exe.config
+/home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Многоугольники.exe
+/home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Многоугольники.pdb
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.csproj.AssemblyReference.cache
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.Form1.resources
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.Properties.Resources.resources
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.csproj.GenerateResource.cache
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.csproj.CoreCompileInputs.cache
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.exe
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.pdb

@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Многоугольники", "Многоугольники\Многоугольники.csproj", "{ADD61095-7245-41DA-AFD6-82B44B186DBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Измерение", "Измерение\Измерение.csproj", "{8346F507-01E9-45D2-97DD-3DCF984C27C8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADD61095-7245-41DA-AFD6-82B44B186DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD61095-7245-41DA-AFD6-82B44B186DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD61095-7245-41DA-AFD6-82B44B186DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD61095-7245-41DA-AFD6-82B44B186DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8346F507-01E9-45D2-97DD-3DCF984C27C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8346F507-01E9-45D2-97DD-3DCF984C27C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8346F507-01E9-45D2-97DD-3DCF984C27C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8346F507-01E9-45D2-97DD-3DCF984C27C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

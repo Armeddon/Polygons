@@ -1,0 +1,6 @@
+/home/artem/RiderProjects/Многоугольники/Измерение/bin/Debug/Измерение.exe
+/home/artem/RiderProjects/Многоугольники/Измерение/bin/Debug/Измерение.pdb
+/home/artem/RiderProjects/Многоугольники/Измерение/obj/Debug/Измерение.csproj.AssemblyReference.cache
+/home/artem/RiderProjects/Многоугольники/Измерение/obj/Debug/Измерение.csproj.CoreCompileInputs.cache
+/home/artem/RiderProjects/Многоугольники/Измерение/obj/Debug/Измерение.exe
+/home/artem/RiderProjects/Многоугольники/Измерение/obj/Debug/Измерение.pdb
