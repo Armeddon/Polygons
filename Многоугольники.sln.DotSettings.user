@@ -1,0 +1,14 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fusr_002Flib_002Fmono_002F4_002E7_002E2_002Dapi_002FFacades_002FSystem_002EComponentModel_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fusr_002Flib_002Fmono_002F4_002E7_002E2_002Dapi_002FFacades_002FSystem_002EComponentModel_002EPrimitives_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
+  &lt;Assembly Path="/usr/lib/mono/4.7.2-api/System.Drawing.dll" /&gt;
+  &lt;Assembly Path="/usr/lib/mono/4.5/System.ComponentModel.Composition.dll" /&gt;
+  &lt;Assembly Path="/usr/lib/mono/4.7.2-api/Facades/System.ComponentModel.Primitives.dll" /&gt;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=_0418_0437_043C_0435_0440_0435_043D_0438_0435_002FComparisonChartForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=_0418_0437_043C_0435_0440_0435_043D_0438_0435_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=_041C_043D_043E_0433_043E_0443_0433_043E_043B_044C_043D_0438_043A_0438_002FForm1/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=_041C_043D_043E_0433_043E_0443_0433_043E_043B_044C_043D_0438_043A_0438_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/Initialized/@EntryValue">True</s:Boolean></wpf:ResourceDictionary>
