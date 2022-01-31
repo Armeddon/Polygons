@@ -38,3 +38,7 @@ D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/
 /home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.csproj.CoreCompileInputs.cache
 /home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.exe
 /home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.pdb
+/home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Измерение.exe
+/home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Измерение.pdb
+/home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Измерение.exe.config
+/home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.csproj.CopyComplete

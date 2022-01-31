@@ -83,5 +83,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Измерение\Измерение.csproj">
+      <Project>{8346f507-01e9-45d2-97dd-3dcf984c27c8}</Project>
+      <Name>Измерение</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

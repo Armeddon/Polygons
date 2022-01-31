@@ -24,8 +24,6 @@ namespace Многоугольники
             ismoving = false;
             isInHull = true;
             r = 40;
-            lineClr = Color.Black;
-            fillClr = Color.OrangeRed;
         }
         protected Shape(int x, int y, int index)
         {
@@ -34,9 +32,31 @@ namespace Многоугольники
             ismoving = false;
             isInHull = true;
             r = 40;
-            lineClr = Color.Black;
-            fillClr = Color.OrangeRed;
             createOrderIndex = index;
+        }
+
+        static public Color LineClr
+        {
+            get
+            {
+                return lineClr;
+            }
+            set
+            {
+                lineClr = value;
+            }
+        }
+
+        static public Color FillClr
+        {
+            get
+            {
+                return fillClr;
+            }
+            set
+            {
+                fillClr = value;
+            }
         }
         static public int R
         {
@@ -46,7 +66,7 @@ namespace Многоугольники
             }
             set
             {
-                r = (0 < value&&value <= 200) ? value : r;
+                r = (0 < value && value <= 200) ? value : r;
             }
         }
         public int X

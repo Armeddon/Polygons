@@ -8,11 +8,13 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Измерение;
 
 namespace Многоугольники
 {
     public partial class Form1 : Form
     {
+        private ComparisonChartForm form2;
         Rectangle ActualForm;
         List<Shape> shapes;
         static public Color HullColor;
@@ -44,7 +46,6 @@ namespace Многоугольники
         {
             shapes = Shape.Andrew(shapes);
         }
-
         private void DeleteDefinition()
         {
             List<Shape> shapesToHell = new List<Shape>();
@@ -70,6 +71,8 @@ namespace Многоугольники
             ActualForm = new Rectangle(0,menuStrip1.Size.Height,ClientSize.Width,ClientSize.Height-menuStrip1.Size.Height);
             triangleToolStripMenuItem.Checked = true;
             definitionToolStripMenuItem.Checked = true;
+            Shape.LineClr = Color.Black;
+            Shape.FillClr = Color.OrangeRed;
             Refresh();
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -220,6 +223,40 @@ namespace Многоугольники
             alg = Algorithms.definition;
             andrewToolStripMenuItem.Checked = false;
             definitionToolStripMenuItem.Checked = true;
+        }
+        private void pointDrawColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Shape.LineClr = colorDialog1.Color;
+                Refresh();
+            }
+        }
+        private void pointFillColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Shape.FillClr = colorDialog1.Color;
+                Refresh();
+            }
+        }
+        private void shapeDrawColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                HullColor = colorDialog1.Color;
+                Refresh();
+            }
+        }
+        private void comparisonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form2 = new ComparisonChartForm(Charts.Comparison);
+            form2.ShowDialog();
+        }
+        private void andrewChartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            form2 = new ComparisonChartForm(Charts.Andrew);
+            form2.ShowDialog();
         }
         private void Form1_Resize(object sender, EventArgs e)
         {

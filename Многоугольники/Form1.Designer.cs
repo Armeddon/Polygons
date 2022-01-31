@@ -1,5 +1,4 @@
-﻿
-namespace Многоугольники
+﻿namespace Многоугольники
 {
     partial class Form1
     {
@@ -37,14 +36,22 @@ namespace Многоугольники
             this.algorithmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.andrewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.definitionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comparisonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.andrewChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pointDrawColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pointFillColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.shapeDrawColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shapeToolStripMenuItem, this.algorithmToolStripMenuItem});
+            this.shapeToolStripMenuItem, this.algorithmToolStripMenuItem, this.chartToolStripMenuItem, this.colorToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -60,6 +67,15 @@ namespace Многоугольники
             this.shapeToolStripMenuItem.Name = "shapeToolStripMenuItem";
             this.shapeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.shapeToolStripMenuItem.Text = "Shape";
+            // 
+            // chartToolStripMenuItem
+            // 
+            this.chartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                this.comparisonToolStripMenuItem,
+                this.andrewChartToolStripMenuItem});
+            this.chartToolStripMenuItem.Name = "chartToolStripMenuItem";
+            this.chartToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.chartToolStripMenuItem.Text = "Chart";
             //
             // algorithmToolStripMenuItem
             //
@@ -69,6 +85,41 @@ namespace Многоугольники
             this.algorithmToolStripMenuItem.Name = "algorithmToolStripMenuItem";
             this.algorithmToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.algorithmToolStripMenuItem.Text = "Algorithm";
+            //
+            // colorToolStripMenuItem
+            //
+            this.colorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
+            {
+                this.pointDrawColorToolStripMenuItem,
+                this.pointFillColorToolStripMenuItem,
+                this.shapeDrawColorToolStripMenuItem});
+            this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.colorToolStripMenuItem.Text = "Color";
+            //
+            // pointDrawColorToolStripMenuItem
+            //
+            this.pointDrawColorToolStripMenuItem.Name = "pointDrawColorToolStripMenuItem";
+            this.pointDrawColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pointDrawColorToolStripMenuItem.Text = "Shape Draw Color";
+            this.pointDrawColorToolStripMenuItem.Click +=
+                new System.EventHandler(this.pointDrawColorToolStripMenuItem_Click);
+            //
+            // pointFillColorToolStripMenuItem
+            //
+            this.pointFillColorToolStripMenuItem.Name = "pointFillColorToolStripMenuItem";
+            this.pointFillColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pointFillColorToolStripMenuItem.Text = "Shape Fill Color";
+            this.pointFillColorToolStripMenuItem.Click +=
+                new System.EventHandler(this.pointFillColorToolStripMenuItem_Click);
+            //
+            // shapeDrawColorToolStripMenuItem
+            //
+            this.shapeDrawColorToolStripMenuItem.Name = "shapeDrawColorToolStripMenuItem";
+            this.shapeDrawColorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.shapeDrawColorToolStripMenuItem.Text = "Hull Draw Color";
+            this.shapeDrawColorToolStripMenuItem.Click +=
+                new System.EventHandler(this.shapeDrawColorToolStripMenuItem_Click);
             // 
             // circleToolStripMenuItem
             // 
@@ -105,6 +156,20 @@ namespace Многоугольники
             this.definitionToolStripMenuItem.Text = "Definition";
             this.definitionToolStripMenuItem.Click += new System.EventHandler(this.definitionToolStripMenuItem_Click);
             // 
+            // comparisonToolStripMenuItem
+            // 
+            this.comparisonToolStripMenuItem.Name = "comparisonToolStripMenuItem";
+            this.comparisonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.comparisonToolStripMenuItem.Text = "Comparison";
+            this.comparisonToolStripMenuItem.Click += new System.EventHandler(this.comparisonToolStripMenuItem_Click);
+            // 
+            // andrewChartToolStripMenuItem
+            // 
+            this.andrewChartToolStripMenuItem.Name = "andrewChartToolStripMenuItem";
+            this.andrewChartToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.andrewChartToolStripMenuItem.Text = "Andrew";
+            this.andrewChartToolStripMenuItem.Click += new System.EventHandler(this.andrewChartToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,6 +202,15 @@ namespace Многоугольники
         private System.Windows.Forms.ToolStripMenuItem algorithmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem andrewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem definitionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem chartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comparisonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem andrewChartToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pointDrawColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pointFillColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem shapeDrawColorToolStripMenuItem;
+
     }
 }
 
