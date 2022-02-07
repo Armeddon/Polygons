@@ -42,3 +42,17 @@ D:/ТОИ и ООП/Практики 2021-2022/Многоугольники/obj/
 /home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Измерение.pdb
 /home/artem/RiderProjects/Многоугольники/Многоугольники/bin/Debug/Измерение.exe.config
 /home/artem/RiderProjects/Многоугольники/Многоугольники/obj/Debug/Многоугольники.csproj.CopyComplete
+/home/artem/RiderProjects/Polygons/Многоугольники/bin/Debug/Многоугольники.exe.config
+/home/artem/RiderProjects/Polygons/Многоугольники/bin/Debug/Многоугольники.exe
+/home/artem/RiderProjects/Polygons/Многоугольники/bin/Debug/Многоугольники.pdb
+/home/artem/RiderProjects/Polygons/Многоугольники/bin/Debug/Измерение.exe
+/home/artem/RiderProjects/Polygons/Многоугольники/bin/Debug/Измерение.pdb
+/home/artem/RiderProjects/Polygons/Многоугольники/bin/Debug/Измерение.exe.config
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.csproj.AssemblyReference.cache
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.Form1.resources
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.Properties.Resources.resources
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.csproj.GenerateResource.cache
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.csproj.CoreCompileInputs.cache
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.csproj.CopyComplete
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.exe
+/home/artem/RiderProjects/Polygons/Многоугольники/obj/Debug/Многоугольники.pdb

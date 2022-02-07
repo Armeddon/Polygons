@@ -15,6 +15,7 @@ namespace Многоугольники
     public partial class Form1 : Form
     {
         private ComparisonChartForm form2;
+        private RadiusForm radForm;
         Rectangle ActualForm;
         List<Shape> shapes;
         static public Color HullColor;
@@ -73,6 +74,7 @@ namespace Многоугольники
             definitionToolStripMenuItem.Checked = true;
             Shape.LineClr = Color.Black;
             Shape.FillClr = Color.OrangeRed;
+            Shape.R = 40;
             Refresh();
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -247,6 +249,17 @@ namespace Многоугольники
                 HullColor = colorDialog1.Color;
                 Refresh();
             }
+        }
+        private void radiusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (radForm == null || !radForm.IsDisposed)
+                radForm = new RadiusForm(this);
+            radForm.Show();
+        }
+        public void radius_Changed(object sender, RadiusEventArgs e)
+        {
+            Shape.R = e.R;
+            Refresh();
         }
         private void comparisonToolStripMenuItem_Click(object sender, EventArgs e)
         {

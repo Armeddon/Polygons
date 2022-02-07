@@ -12,3 +12,17 @@
 /home/artem/RiderProjects/Многоугольники/Измерение/obj/Debug/Измерение.csproj.CopyComplete
 /home/artem/RiderProjects/Многоугольники/Измерение/bin/Debug/System.ComponentModel.Composition.dll
 /home/artem/RiderProjects/Многоугольники/Измерение/bin/Debug/System.ComponentModel.DataAnnotations.dll
+/home/artem/RiderProjects/Polygons/Измерение/bin/Debug/Измерение.exe.config
+/home/artem/RiderProjects/Polygons/Измерение/bin/Debug/Измерение.exe
+/home/artem/RiderProjects/Polygons/Измерение/bin/Debug/Измерение.pdb
+/home/artem/RiderProjects/Polygons/Измерение/bin/Debug/System.ComponentModel.Composition.dll
+/home/artem/RiderProjects/Polygons/Измерение/bin/Debug/System.ComponentModel.DataAnnotations.dll
+/home/artem/RiderProjects/Polygons/Измерение/bin/Debug/System.Windows.Forms.DataVisualization.dll
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.csproj.AssemblyReference.cache
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.ComparisonChartForm.resources
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.Properties.Resources.resources
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.csproj.GenerateResource.cache
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.csproj.CoreCompileInputs.cache
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.csproj.CopyComplete
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.exe
+/home/artem/RiderProjects/Polygons/Измерение/obj/Debug/Измерение.pdb

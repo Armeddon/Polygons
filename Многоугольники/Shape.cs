@@ -23,7 +23,6 @@ namespace Многоугольники
             y = 100;
             ismoving = false;
             isInHull = true;
-            r = 40;
         }
         protected Shape(int x, int y, int index)
         {
@@ -31,7 +30,6 @@ namespace Многоугольники
             this.y = y;
             ismoving = false;
             isInHull = true;
-            r = 40;
             createOrderIndex = index;
         }
 
@@ -66,7 +64,7 @@ namespace Многоугольники
             }
             set
             {
-                r = (0 < value && value <= 200) ? value : r;
+                r = (value > 0) ? value : r;
             }
         }
         public int X

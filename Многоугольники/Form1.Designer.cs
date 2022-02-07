@@ -1,4 +1,6 @@
-﻿namespace Многоугольники
+﻿using System.Drawing;
+
+namespace Многоугольники
 {
     partial class Form1
     {
@@ -43,6 +45,8 @@
             this.pointDrawColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pointFillColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shapeDrawColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.radiusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
@@ -51,7 +55,7 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.shapeToolStripMenuItem, this.algorithmToolStripMenuItem, this.chartToolStripMenuItem, this.colorToolStripMenuItem});
+            this.optionsToolStripMenuItem, this.chartToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -67,6 +71,25 @@
             this.shapeToolStripMenuItem.Name = "shapeToolStripMenuItem";
             this.shapeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.shapeToolStripMenuItem.Text = "Shape";
+            // 
+            // optionsToolStripMenuItem
+            // 
+            this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+                this.algorithmToolStripMenuItem,
+                this.colorToolStripMenuItem,
+                this.shapeToolStripMenuItem,
+                this.radiusToolStripMenuItem});
+            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.optionsToolStripMenuItem.Text = "Options";
+            //
+            // radiusToolStripMenuItem
+            //
+            this.radiusToolStripMenuItem.Name = "radiusToolStripMenuItem";
+            this.radiusToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.radiusToolStripMenuItem.Text = "Radius";
+            this.radiusToolStripMenuItem.Click +=
+                new System.EventHandler(this.radiusToolStripMenuItem_Click);
             // 
             // chartToolStripMenuItem
             // 
@@ -174,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.MinimumSize = new Size(400, 200);
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -189,12 +213,13 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem radiusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shapeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem circleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem squareToolStripMenuItem;
