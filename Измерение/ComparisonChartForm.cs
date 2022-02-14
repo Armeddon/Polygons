@@ -110,7 +110,7 @@ namespace Измерение
         }
         private void Andrew()
         {
-            for (int i = 0; i < 200000; i += 500)
+            for (int i = 0; i < 229500; i += 500)
             {
                 for (int j = 0; j < i; j++)
                 {

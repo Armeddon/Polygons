@@ -47,8 +47,12 @@ namespace Многоугольники
             this.shapeDrawColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.radiusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.timer1 = new System.Windows.Forms.Timer();
+            this.toolBar1 = new System.Windows.Forms.ToolBar();
+            this.startToolBarButton = new System.Windows.Forms.ToolBarButton();
+            this.stopToolBarButton = new System.Windows.Forms.ToolBarButton();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -192,6 +196,31 @@ namespace Многоугольники
             this.andrewChartToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.andrewChartToolStripMenuItem.Text = "Andrew";
             this.andrewChartToolStripMenuItem.Click += new System.EventHandler(this.andrewChartToolStripMenuItem_Click);
+            //
+            // timer1
+            //
+            this.timer1.Interval = 100;
+            this.timer1.Tick += this.timer1_Tick;
+            //
+            // startToolBarButton
+            //
+            this.startToolBarButton.Name = "startToolBarButton";
+            this.startToolBarButton.Text = "\u25B6";
+            //
+            // stopToolBarButton
+            //
+            this.stopToolBarButton.Name = "stopToolBarButton";
+            this.stopToolBarButton.Text = "\u25A0";
+            //
+            // toolbar1
+            //
+            this.toolBar1.Name = "toolbar1";
+            this.toolBar1.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[]
+            {
+                this.startToolBarButton,
+                this.stopToolBarButton
+            });
+            this.toolBar1.ButtonClick += this.toolBar1_Click;
             // 
             // Form1
             // 
@@ -200,6 +229,7 @@ namespace Многоугольники
             this.MinimumSize = new Size(400, 200);
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.toolBar1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Многоугольники";
@@ -235,7 +265,10 @@ namespace Многоугольники
         private System.Windows.Forms.ToolStripMenuItem pointDrawColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pointFillColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shapeDrawColorToolStripMenuItem;
-
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolBar toolBar1;
+        private System.Windows.Forms.ToolBarButton startToolBarButton;
+        private System.Windows.Forms.ToolBarButton stopToolBarButton;
     }
 }
 

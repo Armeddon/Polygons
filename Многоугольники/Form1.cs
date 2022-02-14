@@ -27,6 +27,7 @@ namespace Многоугольники
         };
         Figures figure;
         Algorithms alg;
+        private bool dinamics;
         enum Algorithms
         {
             definition,
@@ -41,6 +42,43 @@ namespace Многоугольники
             get
             {
                 return shapes;
+            }
+        }
+        private Random rnd;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            bool isAnyoneMoving = false;
+            if (dinamics)
+            {
+                foreach (Shape shape in shapes)
+                {
+                    shape.Move(shape.X + rnd.Next(-1,2), shape.Y + rnd.Next(-1,2), this.ActualForm);
+                    if (shape.ismoving) isAnyoneMoving = true;
+                }
+                if (shapes.Count > 3 && !isAnyoneMoving)
+                {
+                    if (alg == Algorithms.andrew)
+                    {
+                        DeleteAndrew();
+                    }
+                    else if (alg == Algorithms.definition)
+                    {
+                        DeleteDefinition();
+                    }
+                }
+                Refresh();
+            }
+        }
+
+        private void toolBar1_Click(object sender, ToolBarButtonClickEventArgs e)
+        {
+            if (e.Button == this.startToolBarButton)
+            {
+                dinamics = true;
+            }
+            else if (e.Button == this.stopToolBarButton)
+            {
+                dinamics = false;
             }
         }
         private void DeleteAndrew()
@@ -69,12 +107,17 @@ namespace Многоугольники
             figure = Figures.triangle;
             alg = Algorithms.definition;
             HullColor = Color.BlueViolet;
-            ActualForm = new Rectangle(0,menuStrip1.Size.Height,ClientSize.Width,ClientSize.Height-menuStrip1.Size.Height);
+            ActualForm = new Rectangle(0,menuStrip1.Size.Height + toolBar1.Size.Height,
+                ClientSize.Width,
+                ClientSize.Height-menuStrip1.Size.Height - toolBar1.Size.Height);
             triangleToolStripMenuItem.Checked = true;
             definitionToolStripMenuItem.Checked = true;
             Shape.LineClr = Color.Black;
             Shape.FillClr = Color.OrangeRed;
             Shape.R = 40;
+            rnd = new Random();
+            dinamics = false;
+            timer1.Start();
             Refresh();
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -273,7 +316,9 @@ namespace Многоугольники
         }
         private void Form1_Resize(object sender, EventArgs e)
         {
-            ActualForm = new Rectangle(0,menuStrip1.Size.Height,ClientSize.Width,ClientSize.Height-menuStrip1.Size.Height);
+            ActualForm = new Rectangle(0,menuStrip1.Size.Height+toolBar1.Size.Height,
+                ClientSize.Width,
+                ClientSize.Height-menuStrip1.Size.Height-toolBar1.Size.Height);
             if (Shapes != null)
             {
                 Shape[] copy = new Shape[shapes.Count()];
