@@ -53,7 +53,7 @@ namespace Многоугольники
                 foreach (Shape shape in shapes)
                 {
                     shape.Move(shape.X + rnd.Next(-1,2), shape.Y + rnd.Next(-1,2), this.ActualForm);
-                    if (shape.ismoving) isAnyoneMoving = true;
+                    if (!isAnyoneMoving && shape.ismoving) isAnyoneMoving = true;
                 }
                 if (shapes.Count > 3 && !isAnyoneMoving)
                 {
@@ -188,19 +188,33 @@ namespace Многоугольники
                     Refresh();
                 }
             }
-            if (missed && e.Button == MouseButtons.Left)
+
+            if (missed && Shape.IsMouseInHull(e.X, e.Y, shapes))
             {
-                if (figure == Figures.circle)
+                foreach (Shape shape in shapes)
                 {
-                    Shapes.Add(new Circle(e.X,e.Y, shapes.Count));
+                    shape.ismoving = true;
                 }
-                else if (figure == Figures.square)
+            }
+            else if (missed && e.Button == MouseButtons.Left)
+            {
+                switch (figure)
                 {
-                    Shapes.Add(new Square(e.X,e.Y, shapes.Count));
-                }
-                else if (figure == Figures.triangle)
-                {
-                    Shapes.Add(new Triangle(e.X, e.Y, shapes.Count));
+                    case Figures.circle:
+                    {
+                        Shapes.Add(new Circle(e.X, e.Y, shapes.Count));
+                        break;
+                    }
+                    case Figures.square:
+                    {
+                        Shapes.Add(new Square(e.X, e.Y, shapes.Count));
+                        break;
+                    }
+                    case Figures.triangle:
+                    {
+                        Shapes.Add(new Triangle(e.X, e.Y, shapes.Count));
+                        break;
+                    }
                 }
                 Refresh();
             }
@@ -366,6 +380,32 @@ namespace Многоугольники
                 }
             }
             Refresh();
+        }
+
+        private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int r = Shape.R;
+            Color lc = Shape.LineClr;
+            Color fc = Shape.FillClr;
+            SaveLoad.LoadState(ref shapes, ref HullColor, ref r, ref lc, ref fc, "/tmp/file");
+            Shape.R = r;
+            Shape.LineClr = lc;
+            Shape.FillClr = fc;
+        }
+
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveLoad.SaveState(shapes, HullColor, Shape.R, Shape.LineClr, Shape.FillClr, "/tmp/file");
+        }
+
+        private void saveAsFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveLoad.SaveState(shapes, HullColor, Shape.R, Shape.LineClr, Shape.FillClr, "/tmp/file");
         }
     }
 }

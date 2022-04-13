@@ -7,16 +7,17 @@ using System.Drawing;
 
 namespace Многоугольники
 {
+    [Serializable]
     abstract public class Shape
     {
-        static protected int r;
-        static protected Color lineClr, fillClr;
-        protected int x, y;
-        protected int mouseX, mouseY; //Положение мыши относительно центра фигуры в момент нажатия
-        protected int hullX, hullY;
-        public bool ismoving;
-        public bool isInHull;
-        public int createOrderIndex;
+        [NonSerialized] static protected int r;
+        [NonSerialized] static protected Color lineClr, fillClr;
+         protected int x, y;
+        [NonSerialized] protected int mouseX, mouseY; //Положение мыши относительно центра фигуры в момент нажатия
+        [NonSerialized] protected int hullX, hullY;
+        [NonSerialized] public bool ismoving;
+        [NonSerialized] public bool isInHull;
+         public int createOrderIndex;
         protected Shape()
         {
             x = 100;
@@ -200,6 +201,15 @@ namespace Многоугольники
                 H[k++] = points[i];
             }
             return H.Take(k - 1).ToList();
+        }
+
+        static public bool IsMouseInHull(int mouseX, int mouseY, List<Shape> hull)
+        {
+            Shape[] array = new Shape[hull.Count];
+            hull.CopyTo(array);
+            List<Shape> copy = new List<Shape>(array);
+            copy.Add(new Circle(mouseX, mouseY, copy.Count));
+            return Andrew(copy) == Andrew(hull);
         }
     }
 }

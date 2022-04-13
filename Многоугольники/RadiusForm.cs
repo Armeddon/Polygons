@@ -14,12 +14,11 @@ namespace Многоугольники
         {
             InitializeComponent();
             radiusEvent += form.radius_Changed;
-            this.scrollbar.Value = Shape.R;
+            this.trackBar.Value = Shape.R;
         }
         private void radiusChangedInner(object sender, EventArgs e)
         {
-            this.Text = Convert.ToString(scrollbar.Value);
-            radiusEvent.Invoke(this, new RadiusEventArgs(scrollbar.Value));
+            radiusEvent.Invoke(this, new RadiusEventArgs(trackBar.Value));
         }
     }
 }

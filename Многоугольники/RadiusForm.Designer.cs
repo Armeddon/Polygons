@@ -34,29 +34,31 @@ namespace Многоугольники
         /// </summary>
         private void InitializeComponent()
         {
-            this.scrollbar = new HScrollBar();
+            this.trackBar = new TrackBar();
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(400, 150);
-            this.Text = Convert.ToString(scrollbar.Value);
+            this.Text = "Radius change";
             //
-            // scrollbar
+            // trackBar
             //
-            scrollbar.Name = "scrollbar";
-            scrollbar.Text = "Radius";
-            scrollbar.Width = 400;
-            scrollbar.Height = 50;
-            scrollbar.ValueChanged += new EventHandler(radiusChangedInner);
-            scrollbar.Maximum = 120;
+            trackBar.Name = "trackBar";
+            trackBar.Minimum = 10;
+            trackBar.Maximum = 70;
+            trackBar.Text = "Radius";
+            trackBar.Width = 400;
+            trackBar.Height = 50;
+            trackBar.Dock = DockStyle.Top;
+            trackBar.Anchor = AnchorStyles.Top;
+            trackBar.ValueChanged += new EventHandler(radiusChangedInner);
             //
             // radiusForm
             //
-            this.Controls.Add(scrollbar);
+            this.Controls.Add(trackBar);
             this.Width = 400;
             this.Height = 150;
         }
-
-        private System.Windows.Forms.ScrollBar scrollbar;
+        private System.Windows.Forms.TrackBar trackBar;
 
         #endregion
     }

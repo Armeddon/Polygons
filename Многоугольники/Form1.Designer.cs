@@ -52,6 +52,11 @@ namespace Многоугольники
             this.toolBar1 = new System.Windows.Forms.ToolBar();
             this.startToolBarButton = new System.Windows.Forms.ToolBarButton();
             this.stopToolBarButton = new System.Windows.Forms.ToolBarButton();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loadFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,12 +64,27 @@ namespace Многоугольники
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem, this.chartToolStripMenuItem});
+                this.fileToolStripMenuItem,
+            this.optionsToolStripMenuItem,
+            this.chartToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            //
+            // fileToolStripMenuItem
+            //
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[]
+            {
+                this.newFileToolStripMenuItem,
+                this.loadFileToolStripMenuItem,
+                this.saveFileToolStripMenuItem,
+                this.saveAsFileToolStripMenuItem
+            });
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.fileToolStripMenuItem.Text = "File";
             // 
             // shapeToolStripMenuItem
             // 
@@ -123,6 +143,34 @@ namespace Многоугольники
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
             this.colorToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.colorToolStripMenuItem.Text = "Color";
+            //
+            // newFileToolStripMenuItem
+            //
+            this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.newFileToolStripMenuItem.Text = "New";
+            this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
+            //
+            // loadFileToolStripMenuItem
+            //
+            this.loadFileToolStripMenuItem.Name = "loadFileToolStripMenuItem";
+            this.loadFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loadFileToolStripMenuItem.Text = "Open";
+            this.loadFileToolStripMenuItem.Click += new System.EventHandler(this.loadFileToolStripMenuItem_Click);
+            //
+            // saveFileToolStripMenuItem
+            //
+            this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
+            this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveFileToolStripMenuItem.Text = "Save";
+            this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.saveFileToolStripMenuItem_Click);
+            //
+            // saveAsFileToolStripMenuItem
+            //
+            this.saveAsFileToolStripMenuItem.Name = "saveAsFileToolStripMenuItem";
+            this.saveAsFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.saveAsFileToolStripMenuItem.Text = "Save as";
+            this.saveAsFileToolStripMenuItem.Click += new System.EventHandler(this.saveAsFileToolStripMenuItem_Click);
             //
             // pointDrawColorToolStripMenuItem
             //
@@ -269,6 +317,11 @@ namespace Многоугольники
         private System.Windows.Forms.ToolBar toolBar1;
         private System.Windows.Forms.ToolBarButton startToolBarButton;
         private System.Windows.Forms.ToolBarButton stopToolBarButton;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsFileToolStripMenuItem;
     }
 }
 

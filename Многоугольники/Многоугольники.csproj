@@ -62,6 +62,7 @@
     <Compile Include="RadiusForm.Designer.cs">
       <DependentUpon>RadiusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaveState.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="Triangle.cs" />

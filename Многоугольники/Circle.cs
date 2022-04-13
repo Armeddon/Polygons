@@ -7,6 +7,7 @@ using System.Drawing;
 
 namespace Многоугольники
 {
+    [Serializable]
     public class Circle : Shape
     {
         public Circle(int x, int y, int index) : base(x,y, index)
