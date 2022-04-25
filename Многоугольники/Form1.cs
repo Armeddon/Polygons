@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,8 @@ namespace Многоугольники
 {
     public partial class Form1 : Form
     {
+        private bool fileChanged;
+        private string savePath;
         private ComparisonChartForm form2;
         private RadiusForm radForm;
         Rectangle ActualForm;
@@ -50,6 +53,7 @@ namespace Многоугольники
             bool isAnyoneMoving = false;
             if (dinamics)
             {
+                fileChanged = true;
                 foreach (Shape shape in shapes)
                 {
                     shape.Move(shape.X + rnd.Next(-1,2), shape.Y + rnd.Next(-1,2), this.ActualForm);
@@ -69,7 +73,6 @@ namespace Многоугольники
                 Refresh();
             }
         }
-
         private void toolBar1_Click(object sender, ToolBarButtonClickEventArgs e)
         {
             if (e.Button == this.startToolBarButton)
@@ -102,6 +105,8 @@ namespace Многоугольники
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            radForm?.Close();
+            fileChanged = false;
             DoubleBuffered = true;
             shapes = new List<Shape>();
             figure = Figures.triangle;
@@ -117,6 +122,7 @@ namespace Многоугольники
             Shape.R = 40;
             rnd = new Random();
             dinamics = false;
+            savePath = "";
             timer1.Start();
             Refresh();
         }
@@ -158,6 +164,7 @@ namespace Многоугольники
                     {
                         missed = false;
                         shape.ismoving = true;
+                        fileChanged = true;
                     }
                 }
             }
@@ -180,6 +187,7 @@ namespace Многоугольники
                         toHell = shapes.IndexOf(shape);
                         isAnyoneToHell = true;
                         missed = false;
+                        fileChanged = true;
                     }
                 }
                 if (isAnyoneToHell)
@@ -189,15 +197,18 @@ namespace Многоугольники
                 }
             }
 
-            if (missed && Shape.IsMouseInHull(e.X, e.Y, shapes))
+            if (missed && shapes.Count >= 3 && IsMouseInHull(e.X, e.Y, shapes))
             {
                 foreach (Shape shape in shapes)
                 {
                     shape.ismoving = true;
                 }
+
+                fileChanged = true;
             }
             else if (missed && e.Button == MouseButtons.Left)
             {
+                fileChanged = true;
                 switch (figure)
                 {
                     case Figures.circle:
@@ -226,6 +237,7 @@ namespace Многоугольники
                 if (shape.ismoving)
                 {
                     shape.Move(e.X, e.Y, ActualForm);
+                    fileChanged = true;
                     Refresh();
                 }
             }
@@ -288,6 +300,7 @@ namespace Многоугольники
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
                 Shape.LineClr = colorDialog1.Color;
+                fileChanged = true;
                 Refresh();
             }
         }
@@ -295,6 +308,7 @@ namespace Многоугольники
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
+                fileChanged = true;
                 Shape.FillClr = colorDialog1.Color;
                 Refresh();
             }
@@ -303,6 +317,7 @@ namespace Многоугольники
         {
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
+                fileChanged = true;
                 HullColor = colorDialog1.Color;
                 Refresh();
             }
@@ -316,6 +331,7 @@ namespace Многоугольники
         public void radius_Changed(object sender, RadiusEventArgs e)
         {
             Shape.R = e.R;
+            fileChanged = true;
             Refresh();
         }
         private void comparisonToolStripMenuItem_Click(object sender, EventArgs e)
@@ -343,6 +359,7 @@ namespace Многоугольники
                         Shape.R * 2 > this.ActualForm.Height)
                     {
                         shapes.Remove(shape);
+                        fileChanged = true;
                     }
                     else switch (figure)
                     {
@@ -350,30 +367,36 @@ namespace Многоугольники
                             if (shape.X >= ActualForm.Width - Shape.R)
                             {
                                 shape.Move(ActualForm.Width + shape.MouseX - Shape.R, shape.Y + shape.MouseY, ActualForm);
+                                fileChanged = true;
                             }
                             if (shape.Y - ActualForm.Y >= ActualForm.Height - Shape.R)
                             {
                                 shape.Move(shape.X+shape.MouseX, ActualForm.Height +shape.MouseY-Shape.R, ActualForm);
+                                fileChanged = true;
                             }
                             break;
                         case Figures.square:
                             if (shape.X >= ActualForm.Width - Shape.R * Math.Sqrt(2) / 2)
                             {
                                 shape.Move((int)Math.Round(ActualForm.Width + shape.MouseX - Shape.R * Math.Sqrt(2) / 2), shape.Y+shape.MouseY, ActualForm);
+                                fileChanged = true;
                             }
                             if (shape.Y - ActualForm.Y >= ActualForm.Height - Shape.R * Math.Sqrt(2) / 2)
                             {
                                 shape.Move(shape.X+shape.MouseX, (int)Math.Round(ActualForm.Height +shape.MouseY - Shape.R * Math.Sqrt(2) / 2), ActualForm);
+                                fileChanged = true;
                             }
                             break;
                         case Figures.triangle:
                             if (shape.X >= ActualForm.Width - 1.5 * Shape.R / Math.Sqrt(3))
                             {
                                 shape.Move((int)Math.Round(ActualForm.Width+shape.MouseX - 1.5 * Shape.R / Math.Sqrt(3)), shape.Y+shape.MouseY, ActualForm);
+                                fileChanged = true;
                             }
                             if (shape.Y - ActualForm.Y >= ActualForm.Height - Shape.R / 2)
                             {
                                 shape.Move(shape.X+shape.MouseX, (int)Math.Round((double)(ActualForm.Height + shape.MouseY - Shape.R/2)), ActualForm);
+                                fileChanged = true;
                             }
                             break;
                     }
@@ -382,30 +405,131 @@ namespace Многоугольники
             Refresh();
         }
 
+        private void Form1_Closing(object sender, CancelEventArgs e)
+        {
+            if (fileChanged)
+            {
+                string message = "Вы хотите сохранить файл?";
+                string caption = "Вы собираетесь закрыть файл!!!";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                DialogResult result = MessageBox.Show(message, caption, buttons);
+                switch (result)
+                {
+                    case DialogResult.Yes:
+                    {
+                        saveFileToolStripMenuItem_Click(new object(), new EventArgs());
+                        break;
+                    }
+                    case DialogResult.Cancel:
+                    {
+                        e.Cancel = true;
+                        break;
+                    }
+                }
+            }
+        }
+
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if (fileChanged)
+            {
+                string message = "Вы хотите сохранить файл?";
+                string caption = "Текущий файл не сохранён!!!";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                DialogResult result = MessageBox.Show(message, caption, buttons);
+                switch (result)
+                {
+                    case DialogResult.No: {
+                        Form1_Load(new object(), new EventArgs());
+                        break;
+                    }
+                    case DialogResult.Yes:
+                    {
+                        saveFileToolStripMenuItem_Click(new object(), new EventArgs());
+                        goto case DialogResult.No;
+                    }
+                }
+            }
+            else
+            {
+                Form1_Load(new object(), new EventArgs());
+            }
         }
 
         private void loadFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int r = Shape.R;
-            Color lc = Shape.LineClr;
-            Color fc = Shape.FillClr;
-            SaveLoad.LoadState(ref shapes, ref HullColor, ref r, ref lc, ref fc, "/tmp/file");
-            Shape.R = r;
-            Shape.LineClr = lc;
-            Shape.FillClr = fc;
+            if (fileChanged)
+            {
+                string message = "Вы хотите сохранить текущий файл?";
+                string caption = "Текущий файл не сохранён!!!";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNoCancel;
+                DialogResult result = MessageBox.Show(message, caption, buttons);
+                switch (result)
+                {
+                    case DialogResult.No:
+                    {
+                        int r = Shape.R;
+                        Color lc = Shape.LineClr;
+                        Color fc = Shape.FillClr;
+                        if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                        {
+                            savePath = openFileDialog1.FileName;
+                            SaveLoad.LoadState(ref shapes, ref HullColor, ref r, ref lc, ref fc, savePath);
+                        }
+                        Shape.R = r;
+                        Shape.LineClr = lc;
+                        Shape.FillClr = fc;
+                        break;
+                    }
+                    case DialogResult.Yes:
+                    {
+                        saveFileToolStripMenuItem_Click(new object(), new EventArgs());
+                        goto case DialogResult.No;
+                    }
+                }
+            }
+            else
+            { 
+                int r = Shape.R;
+                Color lc = Shape.LineClr;
+                Color fc = Shape.FillClr;
+                if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    savePath = openFileDialog1.FileName;
+                    SaveLoad.LoadState(ref shapes, ref HullColor, ref r, ref lc, ref fc, savePath);
+                }
+                Shape.R = r;
+                Shape.LineClr = lc;
+                Shape.FillClr = fc;
+            }
         }
 
         private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveLoad.SaveState(shapes, HullColor, Shape.R, Shape.LineClr, Shape.FillClr, "/tmp/file");
+            if (savePath == "")
+                this.saveAsFileToolStripMenuItem_Click(new object(), new EventArgs());
+            else
+            {
+                SaveLoad.SaveState(shapes, HullColor, Shape.R, Shape.LineClr, Shape.FillClr, savePath);
+            }
         }
 
         private void saveAsFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveLoad.SaveState(shapes, HullColor, Shape.R, Shape.LineClr, Shape.FillClr, "/tmp/file");
+            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                savePath = saveFileDialog1.FileName;
+                SaveLoad.SaveState(shapes, HullColor, Shape.R, Shape.LineClr, Shape.FillClr, savePath);
+            }
+        }
+        
+        private static bool IsMouseInHull(int mouseX, int mouseY, List<Shape> hull)
+        {
+            Shape[] array = new Shape[hull.Count];
+            hull.CopyTo(array);
+            List<Shape> copy = new List<Shape>(array);
+            copy.Add(new Circle(mouseX, mouseY, copy.Count));
+            return Shape.Andrew(copy).SequenceEqual(Shape.Andrew(hull));
         }
     }
 }

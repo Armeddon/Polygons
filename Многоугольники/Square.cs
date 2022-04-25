@@ -18,13 +18,15 @@ namespace Многоугольники
         }
         public override void Move(int x, int y, Rectangle form)
         {
-            if (x - mouseX >= r * Math.Sqrt(2) / 2 && x - mouseX <= form.Width - r * Math.Sqrt(2) / 2)
+            mouseX = x;
+            mouseY = y;
+            if (mouseX >= r * Math.Sqrt(2) / 2 && mouseX <= form.Width - r * Math.Sqrt(2) / 2)
             {
-                this.x = x - mouseX;
+                this.x = mouseX;
             }
-            if (y - form.Y - mouseY >= r * Math.Sqrt(2) / 2 && y - form.Y -mouseY <= form.Height - r * Math.Sqrt(2) / 2)
+            if (mouseY - form.Y >= r * Math.Sqrt(2) / 2 && mouseY - form.Y <= form.Height - r * Math.Sqrt(2) / 2)
             {
-                this.y = y - mouseY;
+                this.y = mouseY;
             }
             IsInside(x, y);
         }
@@ -41,11 +43,11 @@ namespace Многоугольники
         {
             if (Math.Abs(x - this.x) < (int)(Math.Sqrt(2) / 2 * r) && Math.Abs(y - this.y) < (int)(Math.Sqrt(2) / 2 * r))
             {
-                mouseX = x - this.x;
-                mouseY = y - this.y;
+                mouseX = this.x;
+                mouseY = this.y;
                 return true;
             }
-            else return false;
+            return false;
         }
     }
 }
